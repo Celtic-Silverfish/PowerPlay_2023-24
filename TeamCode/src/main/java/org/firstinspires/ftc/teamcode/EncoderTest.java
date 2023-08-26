@@ -29,7 +29,7 @@ public class EncoderTest extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
 
-        leftDrive = hardwareMap.get(DcMotor.class, "LD");
+        leftDrive = hardwareMap.get(DcMotor.class, "left_drive");
 //        rightDrive = hardwareMap.get(DcMotor.class, "RD");
 
         leftDrive.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -41,7 +41,7 @@ public class EncoderTest extends LinearOpMode {
         leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 //        rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        telemetry.addData("Starting position", "%7d: %7d",
+        telemetry.addData("Starting position", "%7d",
                 leftDrive.getCurrentPosition()
 //                ,
 //                rightDrive.getCurrentPosition()
@@ -102,10 +102,10 @@ public class EncoderTest extends LinearOpMode {
                     )) {
 
                 // Display it for the driver.
-                telemetry.addData("Running to",  " %7d :%7d", newLeftTarget
+                telemetry.addData("Running to",  " %7d", newLeftTarget
 //                        ,  newRightTarget
                 );
-                telemetry.addData("Currently at",  " at %7d :%7d",
+                telemetry.addData("Currently at",  " at %7d",
                         leftDrive.getCurrentPosition()
 //                        , rightDrive.getCurrentPosition()
                 );
